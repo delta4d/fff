@@ -1,17 +1,17 @@
+![FFF](./assets/fff.jpg)
+
 ## FFF
 
 fuzzy file finder.
 
-_not fuzzy yet_
-
-## installation
+## Installation
 
     $ git clone https://github.com/delta4d/fff
     $ cd fff
     $ make
     $ make install
 
-## usage
+## Usage
 
 `ls | fff` and type to select.
 
@@ -20,10 +20,10 @@ _not fuzzy yet_
 - <kbd>C-C</kbd>, <kbd>C-Q</kbd>       quit
 - <kbd>ENTER</kbd>                     select the current one
 
-## license
+## License
 
 MIT
 
-## contribution
+## Contribution
 
 Feel free to file an issue, or make a pr.
