@@ -3,7 +3,7 @@ BIN=fff
 DST=/usr/local/bin
 
 all:
-	gcc $(SRC) -std=c99 -Wall -pedantic -D_GNU_SOURCE -lncurses -o $(BIN)
+	gcc $(SRC) -std=c99 -Wall -pedantic -lncurses -o $(BIN)
 
 install:
 	install -d $(DST)
