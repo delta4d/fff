@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <string.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <ncurses.h>
 
@@ -317,13 +318,14 @@ void pattern_match_single(choice_t *c, pattern_t *p) {
         if (tolower(*pp) == tolower(*cp) && *pp) ++pp;
     }
 
-    c->score = !!!*pp;
+    if (*pp) c->score = INT_MIN;
+    else c->score = p->len - c->len;
 }
 
 void choices_update(choices_t *cs) {
     qsort(cs->list, cs->len, sizeof(choice_t *), choice_cmp);
     int i = 0;
-    while (i < cs->len && cs->list[i]->score > 0) ++i;
+    while (i < cs->len && cs->list[i]->score > INT_MIN) ++i;
     cs->matched_num = i;
 }
 
